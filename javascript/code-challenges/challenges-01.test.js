@@ -132,6 +132,8 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
+// to activate stretch goal tests, remove the 'x' from the beginning of 'describe'
+
 const fizzbuzz = (arr) => {
   let newArr = [];
   arr.forEach((num) => {
