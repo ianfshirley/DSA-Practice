@@ -9,9 +9,9 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  let newArr = []
-  arr.forEach(num => newArr.push(num += 1))
-  return newArr
+  let newArr = [];
+  arr.forEach(num => newArr.push(num += 1));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,9 +23,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  let newArr = []
-  arr.forEach(str => newArr.push(str + '!'))
-  return newArr
+  let newArr = [];
+  arr.forEach(str => newArr.push(str + '!'));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,7 +37,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.forEach(str => newArr.push(str.toUpperCase()));
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
