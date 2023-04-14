@@ -79,11 +79,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  // times is a number, not an array, so use for loop to iterate 'times' times
+  for (let i = 0; i < times; i++) {
+    callback(arr,num);
+  }
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
