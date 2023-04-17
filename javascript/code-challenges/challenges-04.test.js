@@ -182,6 +182,8 @@ const sortPeopleBetter = (arr) => {
   })
 };
 
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 12 - Stretch Goal
 
@@ -205,7 +207,8 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  return arr.sort((a,b) => dayOrder.indexOf(a.dayOfWeek) - dayOrder.indexOf(b.dayOfWeek))
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -219,7 +222,22 @@ You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  const dayOrder = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  return arr.sort((a,b) => {
+    if (dayOrder.indexOf(a.dayOfWeek) < dayOrder.indexOf(b.dayOfWeek)) {
+      return -1;
+    } else if (dayOrder.indexOf(a.dayOfWeek) > dayOrder.indexOf(b.dayOfWeek)) {
+      return 1
+    } else {
+      if (a.start < b.start) {
+        return -1;
+      } else if (a.start > b.start) {
+        return 1;
+      } else {
+        return (a.end - b.end);
+      }
+    }
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
