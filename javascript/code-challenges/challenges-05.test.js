@@ -128,7 +128,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  let arr = str.split('');
+  let reversedArr = arr.reduce((acc, val) => [val, ...acc], []);
+  return reversedArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
