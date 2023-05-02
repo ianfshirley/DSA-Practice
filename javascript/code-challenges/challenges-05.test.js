@@ -291,7 +291,13 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  let filtered = arr.filter(char => char.name.toLowerCase().includes('a'));
+  return filtered.reduce((acc, char) => {
+    if (char.children) {
+      acc.push(...char.children);
+    }
+    return acc;
+  },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
