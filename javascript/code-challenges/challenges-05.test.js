@@ -274,7 +274,10 @@ const snorlaxData = {
 };
 
 const extractStats = (snorlaxData) => {
-  // Solution code here...
+  return snorlaxData.stats.reduce((acc, val) => {
+    acc[val.stat.name] = val.baseStat;
+    return acc;
+  },{});
 };
 
 /* ------------------------------------------------------------------------------------------------
