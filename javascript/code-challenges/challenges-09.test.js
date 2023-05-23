@@ -117,16 +117,20 @@ const characters = [
     house: 'Stark',
   },
   {
-    name: 'Jon',
+    name: 'Jon S.',
     spouse: null,
     house: 'Snow',
   },
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-  arr.forEach(char => houses.push(char['house']));
-  return houses;
+  // let houses = [];
+  // arr.forEach(char => houses.push(char['house']));
+  // return houses;
+
+  // above is the way CF wanted it. they already had the houses array and the return. below is cleaner
+
+  return arr.map(char => char.house);
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -155,7 +159,8 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let obj = arr.find(char => char.name === character);
+  return obj.hasOwnProperty('children');
 };
 
 /* ------------------------------------------------------------------------------------------------
