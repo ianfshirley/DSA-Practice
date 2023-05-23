@@ -235,7 +235,19 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+
+  arr.forEach(character => {
+    const { house, children, spouse } = character;
+
+    if (house) {
+      const isSpouseDeceased = deceasedSpouses.includes(spouse);
+
+      const members = 1 + (Array.isArray(children) ? children.length : 0) + (isSpouseDeceased ? 0 : 1);
+
+      survivors.push({ house, members });
+    }
+  });
+
   return survivors;
 };
 
