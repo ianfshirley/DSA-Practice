@@ -193,9 +193,26 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 ------------------------------------------------------------------------------------------------ */
 
 const houseSize = (arr) => {
-  const sizes = [];
-  // Solution code here...
-  return sizes;
+  const sizes = {};
+
+  arr.forEach(character => {
+    const { house, children, spouse } = character;
+    if (house) {
+      if (!sizes.hasOwnProperty(house)) {
+        sizes[house] = { house, members: 1 };
+      } else {
+        sizes[house].members += 1;
+      }
+      if (Array.isArray(children)) {
+        sizes[house].members += children.length;
+      }
+      if (typeof spouse === 'string') {
+        sizes[house].members += 1;
+      }
+    }
+  });
+
+  return Object.values(sizes);
 };
 
 /* ------------------------------------------------------------------------------------------------
