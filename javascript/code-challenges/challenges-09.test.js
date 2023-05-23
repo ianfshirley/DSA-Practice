@@ -170,7 +170,16 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  return arr.reduce((acc, obj) => {
+    acc += 1;
+    if (obj.hasOwnProperty('children')) {
+      acc += obj.children.length;
+    }
+    if (obj.spouse !== null) {
+      acc += 1;
+    }
+    return acc;
+  },0);
 };
 
 /* ------------------------------------------------------------------------------------------------
