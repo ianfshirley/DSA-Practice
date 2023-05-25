@@ -206,7 +206,9 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let sum = 0;
+  weather.forEach(week => week.forEach(temp => sum += temp));
+  return sum/(weather.length*7);
 };
 
 /* ------------------------------------------------------------------------------------------------
