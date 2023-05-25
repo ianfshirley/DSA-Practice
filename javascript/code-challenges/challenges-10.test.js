@@ -7,7 +7,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 ------------------------------------------------------------------------------------------------ */
 
-function returnTen(str){
+function returnTen(str) {
   return str.split('').splice(-10);
 }
 
@@ -118,7 +118,7 @@ const salesData = (hours, data) => {
   // return arr;
 
   let arr = [];
-  data.forEach((num, idx) => arr.push({ sales: num + ' cookies', time: hours[idx]}));
+  data.forEach((num, idx) => arr.push({ sales: num + ' cookies', time: hours[idx] }));
   return arr;
 };
 
@@ -208,7 +208,7 @@ const weeklyTemperatures = [
 const averageDailyTemperature = (weather) => {
   let sum = 0;
   weather.forEach(week => week.forEach(temp => sum += temp));
-  return sum/(weather.length*7);
+  return sum / (weather.length * 7);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,7 +229,18 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let minAvg = 1000;
+  weather.forEach((week) => {
+    let sum = 0;
+    week.forEach((temp) => {
+      sum += temp;
+    });
+    let avg = sum / 7;
+    if (avg < minAvg) {
+      minAvg = avg;
+    }
+  });
+  return minAvg;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -261,20 +272,20 @@ Run your tests from the console: jest challenge-12.test.js
 
 describe('Testing challenge 1', () => {
   test('it should return the last 10 characters of a string as an array', () => {
-    expect(returnTen('hello world')).toStrictEqual(['e','l','l','o',' ','w','o','r','l','d']);
-    expect(returnTen('world')).toStrictEqual(['w','o','r','l','d']);
+    expect(returnTen('hello world')).toStrictEqual(['e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']);
+    expect(returnTen('world')).toStrictEqual(['w', 'o', 'r', 'l', 'd']);
   });
 });
 
 describe('Testing challenge 2', () => {
   test('It should return the max value', () => {
-    expect(findMax([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(24);
+    expect(findMax([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(24);
   });
 });
 
 describe('Testing challenge 3', () => {
   test('It should return the total sum', () => {
-    expect(totalSum([[13,24,24,2], [2,5,6], [2,3]])).toStrictEqual(81);
+    expect(totalSum([[13, 24, 24, 2], [2, 5, 6], [2, 3]])).toStrictEqual(81);
     expect(totalSum([])).toStrictEqual(0);
   });
 });
