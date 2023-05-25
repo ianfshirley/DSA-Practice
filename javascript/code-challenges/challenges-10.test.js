@@ -85,8 +85,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  // create hourly sales array
+  let hourlySales = Array(hoursOpen.length).fill(0);
+  // loop through cookieStores array, make hourlySales[0] be the sum of each cookie store array at position 0, and so on...
+  for (let i = 0; i < stores.length; i++) {
+    for (let j = 0; j < stores[i].length; j++) {
+      hourlySales[j] += stores[i][j];
+    }
+  }
+  return hourlySales;
 };
 
 /* ------------------------------------------------------------------------------------------------
