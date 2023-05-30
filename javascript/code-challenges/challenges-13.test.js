@@ -109,7 +109,7 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  return arr.map(innerArray => innerArray.filter(str => !str.includes('Brook')));
 };
 
 /* ------------------------------------------------------------------------------------------------
