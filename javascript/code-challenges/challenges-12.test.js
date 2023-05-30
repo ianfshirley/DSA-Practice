@@ -108,7 +108,20 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  // Solution code here...
+  const closingTags = [];
+  const closingTagRegex = /<\/(\w+)>/g;
+
+  for (const element of elements) {
+    const matches = element.match(closingTagRegex);
+    if (matches) {
+      for (const match of matches) {
+        const tagName = match.slice(2, -1);
+        closingTags.push(`/${tagName}`);
+      }
+    }
+  }
+
+  return closingTags;
 };
 
 /* ------------------------------------------------------------------------------------------------
