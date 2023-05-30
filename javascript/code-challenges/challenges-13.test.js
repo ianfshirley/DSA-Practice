@@ -136,7 +136,33 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  let result = [[],[],[],[],[],[],[]];
+
+  // arr.forEach((str) => {
+  //   if (str.includes('Monday')) {
+  //     result[0].push(str);
+  //   } if (str.includes('Tuesday')) {
+  //     result[1].push(str);
+  //   } if (str.includes('Wednesday')) {
+  //     result[2].push(str);
+  //   } if (str.includes('Thursday')) {
+  //     result[3].push(str);
+  //   } if (str.includes('Friday')) {
+  //     result[4].push(str);
+  //   } if (str.includes('Saturday')) {
+  //     result[5].push(str);
+  //   } if (str.includes('Sunday')) {
+  //     result[6].push(str);
+  //   }
+  // });
+
+  arr.forEach(str => daysOfWeek.forEach((day, idx) => {
+    if (str.includes(day)) {
+      result[idx].push(str);
+    }
+  }));
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
