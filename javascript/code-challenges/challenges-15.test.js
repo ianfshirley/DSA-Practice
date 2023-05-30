@@ -11,8 +11,9 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-}
+  let pattern = /^(Mr.|Mrs.|Ms.|Dr.)\s[a-zA-Z]+$/;
+  return arr.filter(str => str.match(pattern));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
