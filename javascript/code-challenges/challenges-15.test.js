@@ -153,7 +153,7 @@ const isSecure = (url) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 
@@ -172,7 +172,35 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  const helpCheck = (row1, col1, row2, col2, row3, col3) => {
+    const symbol = board[row1][col1];
+    return (
+      symbol !== '' &&
+      symbol === board[row2][col2] &&
+      symbol === board[row3][col3]
+    );
+  };
+
+  // Check rows
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(i, 0, i, 1, i, 2)) {
+      return true;
+    }
+  }
+
+  // Check columns
+  for (let i = 0; i < 3; i++) {
+    if (helpCheck(0, i, 1, i, 2, i)) {
+      return true;
+    }
+  }
+
+  // Check diagonals
+  if (helpCheck(0, 0, 1, 1, 2, 2) || helpCheck(0, 2, 1, 1, 2, 0)) {
+    return true;
+  }
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
