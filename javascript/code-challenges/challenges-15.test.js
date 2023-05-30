@@ -136,7 +136,7 @@ const sortBy = (property, arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -148,7 +148,8 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-  // Solution code here...
+  let pattern = /^(?:https:\/\/).+/;
+  return pattern.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
