@@ -54,7 +54,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -62,7 +62,8 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let arr = str.split('');
+  return arr.filter(char => arr.indexOf(char) % 2 !== 0).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
