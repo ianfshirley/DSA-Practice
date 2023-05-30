@@ -103,7 +103,15 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+  let bigger = '';
+  arr.forEach((char) => {
+    if (bigger === '' && char.mass > 77) {
+      bigger += char.name;
+    } else if (bigger !== '' && char.mass > 77) {
+      bigger += ` - ${char.name}`;
+    }
+  });
+  return bigger;
 };
 
 /* ------------------------------------------------------------------------------------------------
